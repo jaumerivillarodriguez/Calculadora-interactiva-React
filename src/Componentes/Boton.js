@@ -8,7 +8,9 @@ function Boton (props) {
   };
 
   return(
-    <div className= {`boton-contenedor ${esOperador(props.children) ? 'operador' : ''}`.trimEnd()}>  {/*si la funcion esOperador es true entonces le asignamos la clase operador , sino cadena de caracteres vacia y eliminamos espacios del final*/}
+    <div 
+      className= {`boton-contenedor ${esOperador(props.children) ? 'operador' : ''}`.trimEnd()} 
+      onClick = {()=> props.manejarClic(props.children)}>  {/*llama a una funcion que llama a otra función, sino solo devolveria un valor */}
       {props.children}
     </div>
   );
